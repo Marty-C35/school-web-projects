@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="schema.xsd"?>
+<spotify>
+    <!-- From the point of view of a specific user -->
+    <users>
+        <user>
+            <first_name>Patrick</first_name>
+            <last_name>Jane</last_name>
+            <email>patrick.jane@cba.gov</email>
+            <password>redjohn</password>
+            <birth_date>1969-07-30</birth_date>
+            <profile_picture>https://www.postavy.cz/obrazky-thumbs/wiki/patrick-jane-25240-wikithumb.jpg</profile_picture>
+    
+            <playlists>
+                <playlist>
+                    <cover_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</cover_picture>
+                    <duration>00:06:26</duration>
+                    <songs>
+                        <song name="Red">
+                            <duration>00:06:26</duration>
+                            <release_date>2016-06-16</release_date>
+                            <streaming_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</streaming_picture>
+                        </song>
+                    </songs>
+                </playlist>
+            </playlists>
+    
+            <artist verified="true">
+                <profile_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</profile_picture>
+                <cover_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</cover_picture>
+                <description>The Mentalist</description>
+                <albums>
+                    <album name="The Mentalist soundtrack">
+                        <release_date>2010-04-15</release_date>
+                        <description>Original television soundtrack</description>
+                        <cover_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</cover_picture>
+                        <songs>
+                            <song name="Believe">
+                                <duration>00:03:27</duration>
+                                <release_date>2010-04-15</release_date>
+                                <streaming_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</streaming_picture>
+                            </song>
+                            <song name="Scene of a Crime">
+                                <duration>00:03:37</duration>
+                                <release_date>2010-04-15</release_date>
+                                <streaming_picture>https://i.ytimg.com/vi/JEMsIDMUzMo/maxresdefault.jpg</streaming_picture>
+                                <genres>
+                                    <genre>
+                                        <name>Electronic</name>
+                                        <description>Electronic music is music that employs electronic musical instruments
+                                            and electronic music technology.
+                                        </description>
+                                        <cover_picture>https://genres.com/electronic.jpg</cover_picture>
+                                    </genre>
+                                </genres>
+                            </song>
+                        </songs>
+                    </album>
+                </albums>
+            </artist>
+        </user>
+    </users>
+</spotify>

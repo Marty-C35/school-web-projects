@@ -1,0 +1,10 @@
+{
+    "extends": "@type-config/strict",
+    "compilerOptions": {
+        "noUnusedLocals": false,
+        "noUnusedParameters": false,
+        "outDir": "dist"
+    },
+    "include": ["src", "src/singleton.ts"],
+    "exclude": ["node_modules"]
+}

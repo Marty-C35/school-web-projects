@@ -1,0 +1,38 @@
+.item {
+    padding: 1rem;
+    width: 100%;
+    background-color: #e7e7e7;
+}
+
+.item--sides {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.item--picture {
+    width: 7rem;
+    height: 7rem;
+}
+
+.item--info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 2rem;
+}
+
+.item--line {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.item--small_text {
+    font-size: x-small;
+}
+
+.item--bold_text {
+    font-weight: bolder;
+}

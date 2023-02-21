@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="spotify">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="users">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="user" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="first_name" type="xs:string" />
+                                        <xs:element name="last_name" type="xs:string" />
+                                        <xs:element name="email" type="xs:string" />
+                                        <xs:element name="password" type="xs:string" />
+                                        <xs:element name="birth_date" type="xs:date" />
+                                        <xs:element name="profile_picture" type="xs:string" />
+                                        <xs:element name="playlists" minOccurs="0">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="playlist" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="cover_picture" type="xs:string" />
+                                                                <xs:element name="duration" type="xs:time" />
+                                                                <xs:element name="songs" minOccurs="0">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="song" maxOccurs="unbounded">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="duration" type="xs:time" />
+                                                                                        <xs:element name="release_date" type="xs:date" />
+                                                                                        <xs:element name="streaming_picture" type="xs:string" />
+                                                                                    </xs:sequence>
+                                                                                    <xs:attribute name="name" use="required" />
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                        <xs:element name="artist" minOccurs="0" maxOccurs="1">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="profile_picture" type="xs:string" />
+                                                    <xs:element name="cover_picture" type="xs:string" />
+                                                    <xs:element name="description" type="xs:string" />
+                                                    <xs:element name="albums" minOccurs="0">
+                                                        <xs:complexType>
+                                                            <xs:sequence>
+                                                                <xs:element name="album" maxOccurs="unbounded">
+                                                                    <xs:complexType>
+                                                                        <xs:sequence>
+                                                                            <xs:element name="release_date" type="xs:date" />
+                                                                            <xs:element name="description" type="xs:string" />
+                                                                            <xs:element name="cover_picture" type="xs:string" />
+                                                                            <xs:element name="songs" minOccurs="0">
+                                                                                <xs:complexType>
+                                                                                    <xs:sequence>
+                                                                                        <xs:element name="song" maxOccurs="unbounded">
+                                                                                            <xs:complexType>
+                                                                                                <xs:sequence>
+                                                                                                    <xs:element name="duration" type="xs:time" />
+                                                                                                    <xs:element name="release_date" type="xs:date" />
+                                                                                                    <xs:element name="streaming_picture" type="xs:string" />
+                                                                                                    <xs:element name="genres" minOccurs="0">
+                                                                                                        <xs:complexType>
+                                                                                                            <xs:sequence>
+                                                                                                                <xs:element name="genre" maxOccurs="unbounded">
+                                                                                                                    <xs:complexType>
+                                                                                                                        <xs:sequence>
+                                                                                                                            <xs:element name="name" type="xs:string"/>
+                                                                                                                            <xs:element name="description" type="xs:string"/>
+                                                                                                                            <xs:element name="cover_picture" type="xs:string"/>
+                                                                                                                        </xs:sequence>
+                                                                                                                    </xs:complexType>
+                                                                                                                </xs:element>
+                                                                                                            </xs:sequence>
+                                                                                                        </xs:complexType>
+                                                                                                    </xs:element>
+                                                                                                </xs:sequence>
+                                                                                                <xs:attribute name="name" use="required" />
+                                                                                            </xs:complexType>
+                                                                                        </xs:element>
+                                                                                    </xs:sequence>
+                                                                                </xs:complexType>
+                                                                            </xs:element>
+                                                                        </xs:sequence>
+                                                                        <xs:attribute name="name" use="required" />
+                                                                    </xs:complexType>
+                                                                </xs:element>
+                                                            </xs:sequence>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                                <xs:attribute name="verified" type="xs:boolean" use="required" />
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

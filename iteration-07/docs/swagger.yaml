@@ -1,0 +1,281 @@
+openapi: 3.0.1
+info:
+  title: AirBnB Clone API
+  description: 'This is simple API Server for AirBnB Clone'
+  version: 1.0.0
+
+servers:
+- url: http://localhost:3000/
+
+tags:
+- name: accomodations
+  description: Everything about accomodations
+- name: requests
+  description: Requests to make animal a pet
+
+paths:
+  /api/accommodations:
+    get:
+      parameters:
+        - in: query
+          name: price[lte]
+          schema:
+            type: integer
+          description: Maximum filter price
+        - in: query
+          name: price[gte
+          schema:
+            type: integer
+          description: Minimum filter price
+      tags:
+      - accomodations
+      summary: Get list of accomodations
+      operationId: getAccomodation
+      responses:
+        200:
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiResponse'
+        500:
+          description: server error
+          content: {}
+
+    post:
+      tags:
+      - accomodations
+      summary: Add new accomodation
+      operationId: addAccomodation
+      requestBody:
+        description: Accomodation object that can be reserved
+        content:
+          application/json:
+            schema:
+              properties:
+                name:
+                  type: string
+                description:
+                  type: string
+                mainPhoto:
+                  type: string
+                location:
+                  type: string
+                addedAt:
+                  type: string
+                  example: "2022-04-09T14:33:45.087Z"
+                userId:
+                  type: string
+                price:
+                  type: number
+          required: true
+      responses:
+        201:
+          description: successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid input
+          content: {}
+        500:
+          description: server error
+          content: {}
+        
+    put:
+      parameters:
+        - in: query
+          name: id
+          schema:
+            type: string
+          description: ID of accomodation to be updated
+          required: true
+      tags:
+      - accomodations
+      summary: Updates accomodation
+      operationId: updateAccomodation
+      requestBody:
+        description: Updates accomodation
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Accomodation'
+        required: true
+      responses:
+        201:
+          description: successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid input
+          content: {}
+        500:
+          description: server error
+          content: {}
+
+
+  /api/reservations:
+    post:
+      tags:
+      - requests
+      summary: Creates new reservation
+      operationId: createReservation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                from:
+                  type: string
+                  example: "2022-04-09T14:33:45.087Z"
+                to:
+                  type: string
+                  example: "2022-04-09T14:33:45.087Z"
+                guestCount:
+                  type: number
+                  example: 1
+                reservedAt:
+                  type: string
+                  example: "2022-04-09T14:33:45.087Z"
+                accomodationId:
+                  type: string
+                  format: uuid
+                userId:
+                  type: string
+                  format: uuid
+      responses:
+        201:
+          description: successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid input
+          content: {}
+        500:
+          description: server error
+          content: {}
+
+    patch:
+      tags:
+      - requests
+      summary: Modifies selected reservation
+      operationId: patchReservation
+      parameters:
+      - in: query
+        name: id
+        schema:
+          type: string
+        required: true
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - properties:
+                    canceledAt:
+                      type: string
+                      example: "2022-04-09T14:33:45.087Z"
+                - properties:
+                    isPaid:
+                      type: number
+                      example: "true"
+      responses:
+        201:
+          description: successful operation
+            content:
+              application/json:
+                schema:
+                  $ref: '#/components/schemas/ApiResponse'
+        400:
+          description: Invalid input
+          content: {}
+        500:
+          description: server error
+          content: {}
+
+components:
+  schemas:
+    Accomodation:
+      required:
+       - id
+       - name
+       - description
+       - mainPhoto
+       - location
+       - addedAt
+       - userId
+       - price
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        description:
+          type: string
+        mainPhoto:
+          type: string
+        location:
+          type: string
+        addedAt:
+          type: string
+          example: "2022-04-09T14:33:45.087Z"
+        userId:
+          type: string
+        price:
+          type: number
+
+    Reservations:
+      required:
+      - id
+      - from
+      - to
+      - guestCount
+      - reservedAt
+      - accomodationId
+      - userId
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        from:
+          type: string
+          example: "2022-04-09T14:33:45.087Z"
+        to:
+          type: string
+          example: "2022-04-09T14:33:45.087Z"
+        guestCount:
+          type: number
+          example: 1
+        reservedAt:
+          type: string
+          example: "2022-04-09T14:33:45.087Z"
+        canceledAt:
+          type: string
+          example: "2022-04-09T14:33:45.087Z"
+        accomodationId:
+          type: string
+          format: uuid
+        userId:
+          type: string
+          format: uuid
+        isPaid:
+          type: number
+
+    ApiResponse:
+      type: object
+      properties:
+        status:
+          type: string
+        data:
+          type: object
+        message:
+          type: string
+

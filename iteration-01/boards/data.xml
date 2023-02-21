@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="schema.xsd"?>
+<project name="Project">
+    <boards>
+        <board label="todo">
+            <issues>
+                <issue severity="low" open="true">
+                    <title>Title</title>
+                    <description edited="false">Description</description>
+                    <createdAt>2002-05-30T09:00:00</createdAt>
+                    <assignee>
+                        <name>John Doe</name>
+                        <role>reporter</role>
+                    </assignee>
+                </issue>
+                <issue severity="low" open="true">
+                    <title>Title</title>
+                    <description edited="false">Description</description>
+                    <createdAt>2002-05-30T09:00:00</createdAt>
+                    <assignee>
+                        <name>John Doe</name>
+                        <role>reporter</role>
+                    </assignee>
+                </issue>
+            </issues>
+        </board>
+        <board label="in progress">
+            <issues>
+                <issue severity="medium" open="true">
+                    <title>Title</title>
+                    <description edited="false">Description</description>
+                    <createdAt>2002-05-30T09:00:00</createdAt>
+                    <assignee>
+                        <name>John Doe</name>
+                        <role>reporter</role>
+                    </assignee>
+                </issue>
+                <issue severity="low" open="false">
+                    <title>Title</title>
+                    <description edited="false">Description</description>
+                    <createdAt>2002-05-30T09:00:00</createdAt>
+                    <assignee>
+                        <name>John Doe</name>
+                        <role>reporter</role>
+                    </assignee>
+                </issue>
+            </issues>
+        </board>
+        <board label="done">
+            <issues>
+                <issue severity="high" open="false">
+                    <title>Title</title>
+                    <description edited="true">Description</description>
+                    <createdAt>2002-05-30T09:00:00</createdAt>
+                    <assignee>
+                        <name>John Doe</name>
+                        <role>reporter</role>
+                    </assignee>
+                </issue>
+                <issue severity="low" open="false">
+                    <title>Title</title>
+                    <description edited="false">Description</description>
+                    <createdAt>2002-05-30T09:00:00</createdAt>
+                    <assignee>
+                        <name>John Doe</name>
+                        <role>reporter</role>
+                    </assignee>
+                </issue>
+            </issues>
+        </board>
+    </boards>
+</project>

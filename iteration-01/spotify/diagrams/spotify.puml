@@ -1,0 +1,81 @@
+@startuml spotify
+
+' visual style
+hide circle
+
+' straight lines
+skinparam BackgroundColor white
+skinparam Linetype ortho
+skinparam Nodesep 100
+skinparam Ranksep 50
+
+
+entity User {
+    * id: <<Serial>>
+    ---
+    * first_name: Text
+    * last_name: Text
+    * email: Text
+    * password: Text
+    * birth_date: Timestamp
+    * profile_picture: <<URL>>
+}
+
+
+entity Artist {
+    * id: <<Serial>>
+    ---
+    * profile_picture: <<URL>>
+    * cover_picture: <<URL>>
+    * description: Text
+    * verified: bool
+}
+
+
+entity Album {
+    * id: <<Serial>>
+    ---
+    * name: Text
+    * release_date: Timestamp
+    * description: Text
+    * cover_picture: <<URL>>
+}
+
+
+entity Playlist {
+    * id: <<Serial>>
+    ---
+    * cover_picture: <<URL>>
+    * duration: Timestamp
+}
+
+
+entity Song {
+    * id: <<Serial>>
+    ---
+    * name: Text
+    * duration: Timestamp
+    * release_date: Timestamp
+    * streaming_picture: <<URL>>
+      cover_picture: <<URL>>
+}
+
+
+entity Genre {
+    * id: <<Serial>>
+    ---
+    * name: Text
+    * description: Text
+    * cover_picture: <<URL>>
+}
+
+
+User ||.d.o| Artist: can_be_artist
+Artist ||.d.o{ Album: can_have_albums
+Album ||.r.o{ Song: can_have_songs
+Song }o.d.o{ Genre: songs_can_have_genres
+User ||.d.o{ Playlist: user_playlists
+Playlist }o.d.o{ Song: playlists_can_have_songs
+Playlist }o.d.o{ Genre: playlists_can_have_genres
+
+@enduml

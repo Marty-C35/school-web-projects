@@ -1,0 +1,104 @@
+@startuml heureka-data
+
+hide circle
+skinparam Linetype ortho
+
+scale 1.5
+
+entity Category {
+    * id: Text
+    ---
+    * name: Text
+    * picture: <<URL>>
+}
+
+entity Product {
+    * id: Text
+    ---
+    * name: Text
+    * description: Text
+}
+
+entity ProductCategory {
+    * id: Text
+    ---
+    * productId: Text
+    * categoryId: Text
+}
+
+entity ProductPhoto {
+    * id: Text
+    ---
+    * productId: Text
+    * source: <<URL>>
+    * isMain: Bit
+}
+
+entity Store {
+    * id: String
+    ---
+    * name: Text
+    * eshopAddress: <<URL>>
+      logo: <<URL>>
+}
+
+entity StoreProduct {
+    * id: Text
+    ---
+    * storeId: Text
+    * productId: Text
+}
+
+entity ProductPrice {
+    * id: Text
+    ---
+    * storeProductId: Text
+    * validFrom: Timestamp
+    * price: Float
+    * currency: Text
+}
+
+entity Customer {
+    * id: Text
+    ---
+    * name: Text
+    * password: Text
+      picture: <<URL>>
+}
+
+entity StoreReview {
+    * id: Text
+    ---
+    * customerId: Text
+    * storeId: Text
+    * stars: Int
+    * created: Timestamp
+    * positive: Bit
+      description: Text
+}
+
+entity ProductReview {
+    * id: Text
+    ---
+    * customerId: Text
+    * productId: Text
+    * stars: Int
+    * created: Timestamp
+    * positive: Bit
+      description: Text
+}
+
+
+
+ProductPrice }|..|| StoreProduct: has_price
+Product ||..o{ ProductCategory: has_category
+ProductCategory }o..|| Category: has_category
+ProductPhoto }o..|| Product: has_photo
+Product ||..o{ StoreProduct: has_product
+StoreProduct }o..|| Store: has_product
+Customer ||.r.o{ StoreReview: writes_review
+Customer ||..o{ ProductReview: writes_review
+StoreReview }o..|| Store: has_review
+ProductReview }o..|| Product: has_review
+
+@enduml

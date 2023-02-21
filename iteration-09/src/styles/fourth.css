@@ -1,0 +1,20 @@
+
+
+.box--item {
+    display: inline-flex;
+    font-size: 1rem;
+    height: 4rem;
+    align-items: center;
+}
+
+.first_item {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+
+
+.third_item {
+    font-size: large;
+    font-weight: bolder;
+}

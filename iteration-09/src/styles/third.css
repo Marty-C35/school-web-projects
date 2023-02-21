@@ -1,0 +1,20 @@
+.inline_item {
+    padding: 0.2rem;
+    border: 0.1rem solid lightgrey;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.inline_item--text {
+    flex: 7.5rem;
+    font-size: smaller;
+}
+
+.inline_item--text_bold {
+    
+    font-weight: bold;
+    text-align: right;
+}
+

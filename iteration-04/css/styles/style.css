@@ -1,0 +1,467 @@
+/* This is where your styles go! Don't forget to import the correct font (Roboto) from Google Fonts. */
+
+:root {
+  --nc-font-sans:
+    'Inter',
+    -apple-system,
+    blinkmacsystemfont,
+    'Segoe UI',
+    roboto,
+    oxygen,
+    ubuntu,
+    cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif,
+    'Apple Color Emoji',
+    'Segoe UI Emoji',
+    'Segoe UI Symbol';
+  --body-background: #1b2838;
+  --header-background: #121a24;
+  --grey-text: #bbb;
+  --white-text: #fff;
+  --background-width: 58.75rem;
+  --light-grey-text: #e7e7e7;
+  --light-blue-text: #67c1f5;
+  --menu-background: linear-gradient(90deg, #4371a5 0%, #142981 100%);
+  --blue-background: #5f849b;
+  --dark-grey-text: #556772;
+  --footer-background: #0003;
+  --gradient-background: linear-gradient(99.92deg, rgba(0, 0, 0, 0) 42.56%, rgba(0, 0, 0, 0.35) 100%);
+  --light-blue-background: rgba(103, 193, 245, 0.2);
+  --light-grey-text2: #afafaf;
+  --placeholder-grey: #505050;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+input,
+select,
+button {
+  font-family: var(--nc-font-sans);
+}
+
+p {
+  font-family: var(--nc-font-sans);
+  font-size: 0.875rem;
+  line-height: 1rem;
+  font-weight: 500;
+}
+
+header {
+  background: var(--header-background);
+  height: 4rem;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.header {
+  height: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+body {
+  background: var(--body-background);
+}
+
+.header__logo {
+  height: 67%;
+  padding: 0 1rem;
+}
+
+.header__menu {
+  display: none;
+}
+
+.header__menu-item {
+  color: var(--grey-text);
+  font-size: 1rem;
+  line-height: 1.1875rem;
+}
+
+.background {
+  margin: auto;
+}
+
+.body-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+  grid-template-rows: 15.25rem auto auto auto 1fr [end];
+}
+
+.menu {
+  background: var(--menu-background);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  grid-row: 1 / 2;
+}
+
+.body-grid__game-card {
+  width: 100%;
+  grid-row: 2 / 3;
+}
+
+.body-title {
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+  flex-direction: column;
+  gap: 0.5rem;
+  grid-row: 3 / 4;
+}
+
+.body-title__path {
+  display: none;
+}
+
+.body-title__community-hub {
+  display: none;
+}
+
+.body-title__top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.game-info {
+  display: flex;
+  margin: 0 1rem;
+  flex-direction: column;
+  gap: 1.5rem;
+  grid-row: 4 / 5;
+}
+
+.game-info__items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  order: 1;
+}
+
+.game-info__released {
+  order: 1;
+}
+
+.images {
+  display: flex;
+  margin: 1.5rem 0;
+  flex-direction: column;
+  grid-row: 5 / end;
+}
+
+.images__image {
+  flex: 1 1;
+  overflow: auto;
+}
+
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.game-info__description {
+  color: var(--light-grey-text);
+  order: 2;
+}
+
+.game-info__item {
+  color: var(--light-grey-text);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.game-info__item-name {
+  color: var(--grey-text);
+  font-size: 1rem;
+  line-height: 1.1875rem;
+}
+
+.game-info__value {
+  color: var(--light-blue-text);
+}
+
+.game-info__date {
+  color: var(--white-text);
+}
+
+.game-info__tag-container {
+  color: var(--light-grey-text);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6875rem;
+  order: 3;
+}
+
+.game-info__tags {
+  height: 1.25rem;
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.game-info__tag {
+  color: var(--light-blue-text);
+  background: var(--light-blue-background);
+  padding: 0.1875rem 0.625rem;
+  border-radius: 0.25rem;
+  line-height: 0.875rem;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu__items {
+  display: flex;
+  flex-direction: column;
+}
+
+.menu__item {
+  color: var(--white-text);
+  padding: 1rem 1rem 0;
+  font-size: 0.75rem;
+  font-weight: bold;
+  line-height: normal;
+}
+
+.menu__search {
+  background: var(--blue-background) url('../../assets/search.svg') no-repeat right;
+  background-origin: content-box;
+  box-shadow: inset 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.25);
+  border: 0;
+  border-radius: 0.625rem;
+  height: 2rem;
+  margin: 1rem;
+  padding: 0 0.75rem;
+  font-style: italic;
+  font-size: 1rem;
+  line-height: 1.1875rem;
+}
+
+.menu__search::placeholder {
+  color: var(--placeholder-grey);
+}
+
+.content-container {
+  display: grid;
+}
+
+.body-title__title {
+  color: var(--white-text);
+  line-height: 2.0625rem;
+  font-size: 1.75rem;
+  font-weight: bold;
+}
+
+.body-grid__background {
+  display: none;
+}
+
+.images__small-images {
+  display: none;
+}
+
+footer {
+  display: none;
+}
+
+@media (min-width: 75rem) {
+  header {
+    height: 6.875rem;
+  }
+
+  .header {
+    width: var(--background-width);
+    margin: auto;
+    justify-content: space-between;
+  }
+
+  .background {
+    background: linear-gradient(270deg, #1b2838 0%, rgba(50, 66, 123, 0.33) 49.98%, #1b2838 100%);
+    width: 75rem;
+  }
+
+  .header__menu {
+    display: flex;
+    margin: 1rem;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .body-grid {
+    width: var(--background-width);
+    margin: auto;
+    padding: 1.5rem 0 0.8125rem;
+    grid-template-columns: 37.9375rem 1fr 1rem [end];
+    grid-template-rows: 2.5rem auto [game-info_begin] 10rem auto [end];
+    grid-column-gap: 0.75rem;
+  }
+
+  .body-grid__background {
+    background: var(--gradient-background);
+    display: block;
+    grid-row: game-info_begin / end;
+    grid-column: 1 / end;
+  }
+
+  .menu {
+    box-shadow: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+    height: 2.5rem;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    grid-row: 1 / 2;
+    grid-column: 1 / end;
+  }
+
+  .menu__items {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .menu__item {
+    padding: 0.8125em 1rem;
+  }
+
+  .menu__search {
+    margin: 0.25rem;
+    width: 16.875rem;
+  }
+
+  .body-title {
+    margin: 1.5rem 0;
+    grid-column: 1 / end;
+    grid-row: 2 / 3;
+  }
+
+  .body-title__path {
+    color: var(--light-grey-text2);
+    display: inline;
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
+
+  .body-title__gt {
+    color: var(--dark-grey-text);
+  }
+
+  .body-title__community-hub {
+    background: var(--light-blue-background);
+    color: var(--light-blue-text);
+    border-radius: 0.25rem;
+    display: flex;
+    height: 2.5rem;
+    width: 10.25rem;
+    font-size: 1rem;
+    line-height: 1.1875rem;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .images {
+    margin: 0 0 0.75rem;
+    gap: 0.5rem;
+    grid-row: game-info_begin / end;
+    grid-column: 1 / 2;
+  }
+
+  .images__small-images {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .body-grid__game-card {
+    align-self: start;
+    grid-row: game-info_begin / 4;
+    grid-column: 2 / end;
+  }
+
+  .game-info {
+    margin: 0.5rem 1rem 0 0;
+    align-self: start;
+    grid-row: 4 / end;
+    grid-column: 2 / end;
+  }
+
+  .game-info__description {
+    line-height: 0.875rem;
+    font-size: 0.75rem;
+    order: 0;
+  }
+
+  .game-info__items {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    order: 0;
+  }
+
+  .game-info__item {
+    font-size: 0.875rem;
+    line-height: 1rem;
+    align-items: center;
+    grid-template-columns: 6.25rem 1fr;
+  }
+
+  .game-info__released {
+    padding: 0 0 1rem;
+    order: 0;
+  }
+
+  .game-info__item-name {
+    color: var(--dark-grey-text);
+    font-size: 0.875rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .game-info__value {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+  }
+
+  .game-info__tag-container {
+    align-self: flex-start;
+    grid-row: 10 / 11;
+    grid-column: 2 / 3;
+    order: 0;
+  }
+
+  footer {
+    background: var(--footer-background);
+    color: var(--grey-text);
+    display: block;
+    height: 2rem;
+    width: var(--background-width);
+    margin: auto;
+    font-size: 0.625rem;
+  }
+
+  .footer-description {
+    display: flex;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.625rem;
+    line-height: 0.75rem;
+  }
+
+  .strong {
+    font-weight: bold;
+  }
+}
